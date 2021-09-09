@@ -23,11 +23,11 @@ const fn_gate = (store, cb) => {
 	}
 };
 
-const __body = (arg, cb) => {
+const __body = (arg, cb, native) => {
 	if (!arg) {
 		throw new Error("Sperators has not be empty.\nSeparator must be a array");
 	} else if (typeof arg === "string") {
-		return this.split(arg);
+		return native.split(arg);
 	} else if (typeof arg === "number") {
 		throw new Error(
 			"Sperators has not be a number.\nSeparator must be a array"
@@ -88,20 +88,24 @@ function FutureReplaceMethod(_old, _new) {
 }
 
 function FutureSplitMethod(separators) {
-	return LAYOUT.body(separators, s => {
-		let splitArray = [];
-		let splitString = "";
+	return LAYOUT.body(
+		separators,
+		s => {
+			let splitArray = [];
+			let splitString = "";
 
-		LAYOUT.function([this, separators], (raw, index) => {
-			splitString =
-				raw == " " || +index == raw.length - 1
-					? (splitArray.push(splitString + raw), "")
-					: splitString + raw;
-		});
+			LAYOUT.function([this, separators], (raw, index) => {
+				splitString =
+					raw == " " || +index == raw.length - 1
+						? (splitArray.push(splitString + raw), "")
+						: splitString + raw;
+			});
 
-		LAYOUT.trim(splitArray);
-		return splitArray;
-	});
+			LAYOUT.trim(splitArray);
+			return splitArray;
+		},
+		this
+	);
 }
 
 // Initialization string methods

@@ -1,0 +1,36 @@
+{
+	"name": "js-on-steroids",
+	"version": "1.0.0",
+	"description": "Functions that shows JS a new way how to live.",
+	"main": "./dist/steroid-js.min.js",
+	"scripts": {
+		"dev": "grunt dev && node ./test/steroid-js.dev.js",
+		"build": "grunt build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/stiglicode/js-on-steroids.git"
+	},
+	"keywords": [
+		"Powerfull function",
+		"Split on steroids",
+		"Replace on steroids",
+		"Multiply Split",
+		"Split array",
+		"Multiply separators"
+	],
+	"author": "stiglicode - 2021",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/stiglicode/js-on-steroids/issues"
+	},
+	"homepage": "https://github.com/stiglicode/js-on-steroids#readme",
+	"devDependencies": {
+		"eslint": "^7.32.0",
+		"grunt": "^1.4.1",
+		"grunt-contrib-concat": "^1.0.1",
+		"grunt-contrib-uglify": "^5.0.1",
+		"jit-grunt": "^0.10.0",
+		"time-grunt": "^2.0.0"
+	}
+}

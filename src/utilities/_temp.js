@@ -1,0 +1,4 @@
+const temp = {
+	Array: [],
+	String: "",
+};

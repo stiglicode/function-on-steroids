@@ -4,7 +4,7 @@ const DEV__filesStructure = [
 	"./src/functions/js/*/*js",
 	"./src/functions/js/*js",
 	"./src/helpers/*.js",
-	"./src/test/index.js",
+	"./src/test/index.test.js",
 ];
 
 const PROD__filesStructure = [
@@ -37,12 +37,12 @@ module.exports = function (grunt) {
 			dev: {
 				options: {
 					sourceMap: true,
-					sourceMapName: "./test/steroid-js.dev.min.map.js",
+					sourceMapName: "./test/steroid-js.test.min.map.js",
 				},
 				files: [
 					{
-						src: "./test/steroid-js.dev.js",
-						dest: "./test/steroid-js.dev.min.js",
+						src: "./test/steroid-js.test.js",
+						dest: "./test/steroid-js.test.min.js",
 					},
 				],
 			},
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
 		concat: {
 			dev: {
 				src: DEV__filesStructure,
-				dest: "./test/steroid-js.dev.js",
+				dest: "./test/steroid-js.test.js",
 			},
 			production: {
 				src: PROD__filesStructure,

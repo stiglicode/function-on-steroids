@@ -1,11 +1,12 @@
 {
 	"name": "js-on-steroids",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Functions that shows JS a new way how to live.",
 	"main": "./dist/steroid-js.min.js",
 	"scripts": {
-		"dev": "grunt dev && node ./test/steroid-js.dev.js",
-		"build": "grunt build"
+		"init-dev": "mkdir src/test && touch src/test/index.test.js",
+		"dev": "rm -rf dist && grunt dev && node ./test/steroid-js.test.js",
+		"build": "rm -rf test && rm -rf src/test && rm -rf dist && grunt build"
 	},
 	"repository": {
 		"type": "git",

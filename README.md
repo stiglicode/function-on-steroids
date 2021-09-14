@@ -38,7 +38,7 @@ require("js-on-steroids");
 	charset="UTF-8"
 	defer
 ></script>;
-// [--!!-- Option to use CDN is not supported, yet. --!!--]
+// [--!!-- CDN option is not supported, yet. --!!--]
 ```
 
 ---

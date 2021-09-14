@@ -144,6 +144,16 @@ function fn_asString(whiteSpace) {
 	return strigify;
 }
 
-console.log(
-	"Hi my name is some fucking name".steroid_split(["i", "m"]).asArray()
-);
+// CommonJS module exports
+// --------------------------------------------------------------
+
+//# Split
+//
+module.exports = String.prototype.steroid_split = FutureSplitMethod;
+
+// ES6 module exports
+// --------------------------------------------------------------
+
+//# Split
+//
+export default String.prototype.steroid_split = FutureSplitMethod;
